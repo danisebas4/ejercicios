@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+    <h1>Edad del Perrito<h1>
+    <div>
+        <p>Coco</p>
+        <img src="perrito.jpg" alt="">
+        <br>
+        <input type="number" id="edad">
+        <p id="mito"></p>
+        <p id="real"></p>
+        <button id="boton">Calcular</button>
+    </div>
+    <script>
+        var b=document.getElementById("boton")
+        b.addEventListener("click", ejec)
+        function ejec() {
+            calcularEdadReal()
+            calcularEdadMito()
+        }
+        function calcularEdadReal(){
+            edad=parseInt(document.getElementById("edad").value); 
+            edadR=(16*Math.log(edad))+31
+            document.getElementById("real").innerHTML = "La edad real del perrito es: "+Math.round(edadR)
+        }
+        function calcularEdadMito(){
+            edad=parseInt(document.getElementById("edad").value); 
+            edadM=7*edad
+            document.getElementById("mito").innerHTML = "La edad mito del perrito es: "+edadM
+        }
+    </script>
+</body>
+</html>
